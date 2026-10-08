@@ -41,7 +41,7 @@ const languagePairs = [
   ["Building practical AI systems", "Xây dựng các hệ thống AI thực tiễn"],
   ["from model to deployment.", "từ mô hình đến triển khai."],
   ["Le Hoang Gia Vi — Fresher AI Engineer", "Le Hoang Gia Vi — Kỹ sư AI Fresher"],
-  ["Final-year Data Science student and AI Engineer Intern with hands-on work in", "Sinh viên năm cuối ngành Khoa học Dữ liệu, đồng thời là thực tập sinh Kỹ sư AI với kinh nghiệm thực tế về"],
+  ["Data Science graduate and AI Engineer Intern with hands-on work in", "Đã tốt nghiệp ngành Khoa học Dữ liệu, đồng thời là thực tập sinh Kỹ sư AI với kinh nghiệm thực tế về"],
   ["computer vision, machine learning, LLM/RAG and cloud AI", "thị giác máy tính, học máy, LLM/RAG và AI trên nền tảng đám mây"],
   ["I build clear, useful AI applications from models, data and tests.", "Tôi xây dựng ứng dụng AI rõ ràng và hữu ích từ mô hình, dữ liệu và kiểm thử."],
   ["Open to Fresher AI Engineer opportunities", "Sẵn sàng cho các vị trí Kỹ sư AI Fresher"],
@@ -52,7 +52,7 @@ const languagePairs = [
   ["ABOUT", "GIỚI THIỆU"],
   ["From AI experiments to", "Từ thử nghiệm AI đến"],
   ["useful systems.", "hệ thống hữu ích."],
-  ["I am a final-year Data Science student with hands-on experience", "Tôi là sinh viên năm cuối ngành Khoa học Dữ liệu với kinh nghiệm thực hành"],
+  ["I am a Data Science graduate with hands-on experience", "Tôi đã tốt nghiệp ngành Khoa học Dữ liệu với kinh nghiệm thực hành"],
   ["in computer vision, machine learning, LLM-based applications and cloud AI deployment.", "về thị giác máy tính, học máy, ứng dụng dựa trên LLM và triển khai AI trên đám mây."],
   ["My work covers model training, evaluation, real-time inference, retrieval systems", "Công việc của tôi gồm huấn luyện, đánh giá mô hình, suy luận thời gian thực, hệ thống truy xuất"],
   ["and end-to-end AI pipelines.", "và các pipeline AI đầu-cuối."],
@@ -96,9 +96,9 @@ const languagePairs = [
   ["Mar 2026 — Jul 2026", "03/2026 — 07/2026"],
   ["AWS · Cloud Engineer Intern", "AWS · Thực tập sinh Kỹ sư Đám mây"],
   ["Built a fraud-detection flow using API Gateway, Lambda, Kinesis, SageMaker, SNS, Firehose and S3 for prediction history.", "Xây dựng luồng phát hiện gian lận dùng API Gateway, Lambda, Kinesis, SageMaker, SNS, Firehose và S3 để lưu lịch sử dự đoán."],
-  ["Sep 2022 — Present", "09/2022 — Nay"],
+  ["Graduated", "Đã tốt nghiệp"],
   ["HUTECH · Engineering of Data Science", "HUTECH · Kỹ thuật Khoa học Dữ liệu"],
-  ["Final-year Data Science student · GPA 3.39/4.00.", "Sinh viên năm cuối Khoa học Dữ liệu · GPA 3.39/4.00."],
+  ["Data Science graduate · GPA 3.38/4.00.", "Đã tốt nghiệp Khoa học Dữ liệu · GPA 3.38/4.00."],
   ["HUTECH IT Got Talent · Finalist", "HUTECH IT Got Talent · Chung kết"],
   ["Built an AI fall-detection solution using camera and CSI signals with real-time email alerts.", "Xây dựng giải pháp AI phát hiện té ngã từ camera và tín hiệu CSI, có cảnh báo email thời gian thực."],
   ["FEATURED AI SYSTEMS", "HỆ THỐNG AI TIÊU BIỂU"],
@@ -238,8 +238,9 @@ function updateLanguageAttributes(language) {
     videoControl.setAttribute("title", videoLabel);
   }
 
-  $$(".repo-card-media").forEach((link) => {
-    const name = $("h3", link.closest(".repo-card"))?.textContent?.trim();
+  $$("a.repo-card-media").forEach((link) => {
+    const card = link.closest(".repo-card");
+    const name = card.dataset.defaultTitle || $("h3", card)?.textContent?.trim();
     if (name) {
       link.setAttribute(
         "aria-label",
@@ -299,6 +300,21 @@ function updateRoleProjectCards(copy) {
   if (!roleContentReady) return;
 
   repoCards.forEach((card) => {
+    const title = $(".repo-card-body h3", card);
+    const projectLink = profiles[currentRole].projectLinks?.[card.dataset.projectId];
+    title.textContent = card.dataset.defaultTitle;
+    if (projectLink) {
+      const link = document.createElement("a");
+      link.href = projectLink[0];
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = card.dataset.defaultTitle;
+      const shortUrl = document.createElement("span");
+      shortUrl.className = "repo-title-url";
+      shortUrl.textContent = projectLink[1];
+      link.append(shortUrl);
+      title.replaceChildren(link);
+    }
     const description = $(".repo-card-body p", card);
     if (!description) return;
 
@@ -313,7 +329,7 @@ function updateRoleProjectOrder(profile) {
   if (!roleContentReady || !repoTrack) return;
 
   repoCards.forEach((card) => {
-    const priority = profile.projectPriorities[card.dataset.projectId];
+    const priority = profile.projectPriorities[card.dataset.projectId] ?? 99;
     card.dataset.priority = String(priority);
   });
 
@@ -811,6 +827,7 @@ const repoPrev = $("#repoPrev");
 const repoNext = $("#repoNext");
 
 repoCards.forEach((card) => {
+  card.dataset.defaultTitle = $(".repo-card-body h3", card).textContent;
   const description = $(".repo-card-body p", card);
   if (!description) return;
   card.dataset.defaultDescriptionEn = description.textContent.trim();
@@ -889,7 +906,8 @@ function applyRepoFilter(filter) {
   repoCurrentIndex = 0;
 
   repoCards.forEach((card) => {
-    const visible = filter === "all" || card.dataset.category === filter;
+    const inRole = card.dataset.projectId in profiles[currentRole].projectPriorities;
+    const visible = inRole && (filter === "all" || card.dataset.category === filter);
     card.hidden = !visible;
     card.classList.remove("is-active");
   });
@@ -914,6 +932,7 @@ repoFilterButtons.forEach((button) => {
 
 repoCards.forEach((card) => {
   card.addEventListener("keydown", (event) => {
+    if (event.target.closest("a")) return;
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
       card.classList.toggle("is-active");
@@ -922,7 +941,7 @@ repoCards.forEach((card) => {
 
   card.addEventListener("click", (event) => {
     if (!window.matchMedia("(hover: none)").matches) return;
-    if (event.target.closest(".repo-link")) return;
+    if (event.target.closest("a")) return;
 
     if (!card.classList.contains("is-active")) {
       event.preventDefault();

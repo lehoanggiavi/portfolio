@@ -3023,6 +3023,20 @@ footer {
   line-height: 1.65;
 }
 
+.repo-title-url {
+  display: block;
+  margin-top: .5rem;
+  color: var(--accent);
+  font-size: .68rem;
+  line-height: 1.4;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+}
+
+.repo-card-body h3 a:hover {
+  text-decoration: underline;
+}
+
 .repo-card-body .tag-row {
   margin-bottom: 18px;
 }

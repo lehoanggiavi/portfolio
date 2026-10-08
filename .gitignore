@@ -3,3 +3,5 @@ templates/*.aux
 templates/*.log
 templates/*.out
 templates/*.synctex.gz
+
+/templates/

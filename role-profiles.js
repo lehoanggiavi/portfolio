@@ -25,7 +25,7 @@ const roleProfiles = {
           titlePrimary: "Building practical AI systems",
           titleSecondary: "from model to deployment.",
           roleLabel: "Le Hoang Gia Vi — Fresher AI Engineer",
-          description: "Final-year Data Science student and AI Engineer Intern with hands-on work in <strong>computer vision, machine learning, LLM/RAG and cloud AI</strong>. I build clear, useful AI applications from models, data and tests.",
+          description: "Data Science graduate with practical internship experience in machine learning, computer vision, and AWS cloud deployment. Hands-on experience developing real-time vision pipelines and LLM/RAG applications, bridging the gap between experimental models and functional services. Focused on code reliability, efficient deployment, and continuous performance monitoring to deliver practical AI solutions.",
           primaryAction: "Explore AI Projects",
           status: "Open to Fresher AI Engineer opportunities",
           technologies: [
@@ -40,7 +40,7 @@ const roleProfiles = {
         about: {
           heading: ["From AI experiments to", "useful systems."],
           paragraphs: [
-            "I am a final-year <strong>Data Science</strong> student with hands-on experience in computer vision, machine learning, LLM-based applications and cloud AI deployment. My work covers model training, evaluation, real-time inference, retrieval systems and end-to-end AI pipelines.",
+            "I am a <strong>Data Science</strong> graduate with hands-on experience in computer vision, machine learning, LLM-based applications and cloud AI deployment. My work covers model training, evaluation, real-time inference, retrieval systems and end-to-end AI pipelines.",
             "I care about AI systems that are accurate in tests and also simple to reproduce, efficient to run and useful in real applications.",
           ],
           points: [
@@ -90,7 +90,7 @@ const roleProfiles = {
           titlePrimary: "Xây dựng hệ thống AI thực tiễn",
           titleSecondary: "từ mô hình đến triển khai.",
           roleLabel: "Le Hoang Gia Vi — Kỹ sư AI Fresher",
-          description: "Sinh viên năm cuối ngành Khoa học Dữ liệu, đồng thời là thực tập sinh Kỹ sư AI với kinh nghiệm thực tế về <strong>thị giác máy tính, học máy, LLM/RAG và AI trên nền tảng đám mây</strong>. Tôi xây dựng ứng dụng AI rõ ràng, hữu ích từ mô hình, dữ liệu và kiểm thử.",
+          description: "Tốt nghiệp ngành Khoa học Dữ liệu với kinh nghiệm thực tập thực tế về học máy, thị giác máy tính và triển khai trên AWS. Có kinh nghiệm phát triển pipeline thị giác thời gian thực và ứng dụng LLM/RAG, kết nối mô hình thử nghiệm với dịch vụ hoạt động thực tế. Tập trung vào độ tin cậy của mã nguồn, triển khai hiệu quả và giám sát hiệu năng liên tục để cung cấp giải pháp AI thiết thực.",
           primaryAction: "Khám phá dự án AI",
           status: "Sẵn sàng cho các vị trí Kỹ sư AI Fresher",
           technologies: [
@@ -105,7 +105,7 @@ const roleProfiles = {
         about: {
           heading: ["Từ thử nghiệm AI đến", "hệ thống hữu ích."],
           paragraphs: [
-            "Tôi là sinh viên năm cuối ngành <strong>Khoa học Dữ liệu</strong>, có kinh nghiệm thực hành về thị giác máy tính, học máy, ứng dụng dựa trên LLM và triển khai AI trên đám mây. Công việc của tôi gồm huấn luyện, đánh giá mô hình, suy luận thời gian thực, hệ thống truy xuất và pipeline AI đầu-cuối.",
+            "Tôi đã tốt nghiệp ngành <strong>Khoa học Dữ liệu</strong>, có kinh nghiệm thực hành về thị giác máy tính, học máy, ứng dụng dựa trên LLM và triển khai AI trên đám mây. Công việc của tôi gồm huấn luyện, đánh giá mô hình, suy luận thời gian thực, hệ thống truy xuất và pipeline AI đầu-cuối.",
             "Tôi quan tâm đến các hệ thống AI chính xác khi kiểm thử, dễ tái lập, chạy hiệu quả và hữu ích trong ứng dụng thực tế.",
           ],
           points: [
@@ -173,7 +173,7 @@ const roleProfiles = {
           titlePrimary: "Turning data into",
           titleSecondary: "validated decisions.",
           roleLabel: "Le Hoang Gia Vi — Fresher Data Scientist",
-          description: "Final-year Data Science student with applied work in <strong>predictive modeling, imbalanced data, customer segmentation and model evaluation</strong>. I turn data questions into reproducible analyses and useful ML systems.",
+          description: "Methodical Data Science graduate with a solid foundation in predictive modeling, imbalanced classification, and customer segmentation. Skilled in feature engineering, hypothesis-driven model comparison, and structured evaluation. Committed to reproducible research, explainable AI, and assessing model constraints to ensure practical business alignment.",
           primaryAction: "Explore Data Science Work",
           status: "Open to Fresher Data Scientist opportunities",
           technologies: [
@@ -188,7 +188,7 @@ const roleProfiles = {
         about: {
           heading: ["From data questions to", "measurable models."],
           paragraphs: [
-            "I am a final-year <strong>Data Science</strong> student with hands-on work in machine learning, model evaluation, imbalanced classification and customer segmentation. My projects connect data preparation, experimentation and clearly reported results.",
+            "I am a <strong>Data Science</strong> graduate with hands-on work in machine learning, model evaluation, imbalanced classification and customer segmentation. My projects connect data preparation, experimentation and clearly reported results.",
             "I value analytical work that is reproducible, grounded in the data and useful for a real decision or workflow.",
           ],
           points: [
@@ -238,7 +238,7 @@ const roleProfiles = {
           titlePrimary: "Biến dữ liệu thành",
           titleSecondary: "quyết định đã kiểm chứng.",
           roleLabel: "Le Hoang Gia Vi — Data Scientist Fresher",
-          description: "Sinh viên năm cuối ngành Khoa học Dữ liệu với kinh nghiệm về <strong>mô hình dự báo, dữ liệu mất cân bằng, phân khúc khách hàng và đánh giá mô hình</strong>. Tôi chuyển câu hỏi dữ liệu thành phân tích có thể tái lập và hệ thống ML hữu ích.",
+          description: "Tốt nghiệp ngành Khoa học Dữ liệu, làm việc có phương pháp, với nền tảng vững về mô hình dự báo, phân loại dữ liệu mất cân bằng và phân khúc khách hàng. Có kỹ năng xây dựng đặc trưng, so sánh mô hình dựa trên giả thuyết và đánh giá có cấu trúc. Chú trọng nghiên cứu có thể tái lập, AI có khả năng giải thích và đánh giá giới hạn mô hình để phù hợp với nhu cầu kinh doanh thực tế.",
           primaryAction: "Khám phá dự án Khoa học Dữ liệu",
           status: "Sẵn sàng cho các vị trí Data Scientist Fresher",
           technologies: [
@@ -253,7 +253,7 @@ const roleProfiles = {
         about: {
           heading: ["Từ câu hỏi dữ liệu đến", "mô hình có thể đo lường."],
           paragraphs: [
-            "Tôi là sinh viên năm cuối ngành <strong>Khoa học Dữ liệu</strong>, có kinh nghiệm thực hành về học máy, đánh giá mô hình, phân loại dữ liệu mất cân bằng và phân khúc khách hàng. Các dự án của tôi kết nối chuẩn bị dữ liệu, thử nghiệm và báo cáo kết quả rõ ràng.",
+            "Tôi đã tốt nghiệp ngành <strong>Khoa học Dữ liệu</strong>, có kinh nghiệm thực hành về học máy, đánh giá mô hình, phân loại dữ liệu mất cân bằng và phân khúc khách hàng. Các dự án của tôi kết nối chuẩn bị dữ liệu, thử nghiệm và báo cáo kết quả rõ ràng.",
             "Tôi coi trọng công việc phân tích có thể tái lập, bám sát dữ liệu và hữu ích cho một quyết định hoặc quy trình thực tế.",
           ],
           points: [
@@ -297,13 +297,18 @@ const roleProfiles = {
   },
   da: {
     cvHref: "assets/Le_Hoang_Gia_Vi_CV_Data_Analyst.pdf",
+    projectLinks: {
+      "fmcg-multi-country-sales": ["https://lehoanggiavi.github.io/FMCGMultiCountrySalesDataset/", "FMCG…/"],
+      "fnb-supply-chain": ["https://lehoanggiavi.github.io/F-B-Supply-Chain/", "F-B-Supply-Chain/"],
+      "xom-bank": ["https://lehoanggiavi.github.io/Banking/", "Banking/"],
+    },
     projectPriorities: {
       "fmcg-multi-country-sales": 1,
       "fnb-supply-chain": 2,
       "xom-bank": 3,
       "smart-class": 8,
       clen: 10,
-      dagpt: 4,
+      "insurance-ops": 4,
       "cacao-shield": 11,
       "fraud-detection": 5,
       "parking-slot": 9,
@@ -321,7 +326,7 @@ const roleProfiles = {
           titlePrimary: "Turning business data into",
           titleSecondary: "clearer decisions.",
           roleLabel: "Le Hoang Gia Vi — Fresher Data Analyst",
-          description: "Final-year Data Science student with applied work in <strong>SQL analysis, data warehousing, Power BI and customer segmentation</strong>. I make complex data easier to trust, explore and use in decision-making.",
+          description: "Detail-oriented Data Science graduate with hands-on experience in SQL, Power BI, and exploratory data analysis. Proven track record in transforming sales, operational, and customer behavior data into intuitive dashboards and root-cause analyses. Dedicated to partnering with cross-functional teams to identify priorities and propose measurable, data-informed improvements.",
           primaryAction: "Explore Analytics Work",
           status: "Open to Fresher Data Analyst opportunities",
           technologies: [
@@ -336,7 +341,7 @@ const roleProfiles = {
         about: {
           heading: ["From business data to", "clearer decisions."],
           paragraphs: [
-            "I am a final-year <strong>Data Science</strong> student with hands-on work in SQL analysis, data warehousing, Power BI and customer segmentation. My work connects quality-checked data, analysis and business-facing outputs.",
+            "I am a <strong>Data Science</strong> graduate with hands-on work in SQL analysis, data warehousing, Power BI and customer segmentation. My work connects quality-checked data, analysis and business-facing outputs.",
             "I enjoy making data easier to understand: define the question, validate the numbers and communicate the insight clearly.",
           ],
           points: [
@@ -361,10 +366,10 @@ const roleProfiles = {
           title: "Selected analytics work",
           subtitle: "Projects are ordered around the strongest evidence for SQL analysis, data quality, BI and decision-support workflows.",
           descriptions: {
-            "fmcg-multi-country-sales": "Analyzed 1.05M FMCG sales records across six countries to support planning priorities; the top 20% of SKUs generated 50.04% of net sales, with SQL Server and Power BI reconciled as a planning guardrail.",
-            "fnb-supply-chain": "Built a Power BI dashboard for supply-chain monitoring; validated 11 DAX KPIs including orders, gross margin and OTIF after EDA, data-quality checks and Power Query cleaning.",
-            "xom-bank": "Analyzed 157K+ banking transactions in SQL Server/Power BI, passed 19/19 data-quality checks and segmented 2K+ customer profiles for decision support.",
-            dagpt: "Delivered a self-service data assistant that turns uploaded CSVs and natural-language questions into analyses and interactive charts for faster exploration.",
+            "fmcg-multi-country-sales": "Across 1.05M sales records in six countries, the top 20% of SKUs generated 50.04% of net sales, highlighting concentrated revenue exposure. Recommended planning priorities: protect availability of high-value SKUs and monitor promotion volume alongside gross margin.",
+            "fnb-supply-chain": "Of 2,200 orders, 92.55% arrived on time and in full; 164 late orders highlighted delivery-service gaps. Recommended reviewing suppliers S005/S008 and warehouse W001 first, tracking delivery reliability, stockouts and waste to guide corrective action.",
+            "xom-bank": "Analyzed 157K+ transactions and 2,000 customer profiles; 1,697 customers had no observed transactions in the dataset, limiting behavior-based targeting. Proposed onboarding tests tailored to customer segments, measured by first-transaction rate against a holdout group.",
+            "insurance-ops": "Across 13,846 complaints, resolution averaged 12.85 days versus a 7-day median, highlighting long-running cases. Recommended reviewing priority cases and CRO intake, and improving status logging: only 31.42% of complaints had recorded status history.",
           },
         },
         contact: {
@@ -386,7 +391,7 @@ const roleProfiles = {
           titlePrimary: "Biến dữ liệu kinh doanh thành",
           titleSecondary: "quyết định rõ ràng hơn.",
           roleLabel: "Le Hoang Gia Vi — Data Analyst Fresher",
-          description: "Sinh viên năm cuối ngành Khoa học Dữ liệu với kinh nghiệm về <strong>phân tích SQL, kho dữ liệu, Power BI và phân khúc khách hàng</strong>. Tôi giúp dữ liệu phức tạp trở nên đáng tin, dễ khám phá và hữu ích hơn cho quyết định.",
+          description: "Tốt nghiệp ngành Khoa học Dữ liệu, chú trọng chi tiết, có kinh nghiệm thực hành SQL, Power BI và phân tích khám phá dữ liệu. Có kinh nghiệm chuyển dữ liệu bán hàng, vận hành và hành vi khách hàng thành dashboard trực quan và phân tích nguyên nhân gốc. Chú trọng phối hợp với các nhóm chức năng để xác định ưu tiên và đề xuất cải tiến có thể đo lường, dựa trên dữ liệu.",
           primaryAction: "Khám phá dự án Phân tích Dữ liệu",
           status: "Sẵn sàng cho các vị trí Data Analyst Fresher",
           technologies: [
@@ -401,7 +406,7 @@ const roleProfiles = {
         about: {
           heading: ["Từ dữ liệu kinh doanh đến", "quyết định rõ ràng hơn."],
           paragraphs: [
-            "Tôi là sinh viên năm cuối ngành <strong>Khoa học Dữ liệu</strong>, có kinh nghiệm thực hành về phân tích SQL, kho dữ liệu, Power BI và phân khúc khách hàng. Công việc của tôi kết nối dữ liệu đã kiểm tra chất lượng, phân tích và đầu ra hướng đến nghiệp vụ.",
+            "Tôi đã tốt nghiệp ngành <strong>Khoa học Dữ liệu</strong>, có kinh nghiệm thực hành về phân tích SQL, kho dữ liệu, Power BI và phân khúc khách hàng. Công việc của tôi kết nối dữ liệu đã kiểm tra chất lượng, phân tích và đầu ra hướng đến nghiệp vụ.",
             "Tôi thích làm cho dữ liệu dễ hiểu hơn: xác định câu hỏi, kiểm tra số liệu và truyền đạt insight rõ ràng.",
           ],
           points: [
@@ -426,10 +431,10 @@ const roleProfiles = {
           title: "Dự án phân tích tiêu biểu",
           subtitle: "Dự án được sắp theo bằng chứng mạnh nhất về phân tích SQL, chất lượng dữ liệu, BI và quy trình hỗ trợ quyết định.",
           descriptions: {
-            "fmcg-multi-country-sales": "Phân tích 1,05 triệu bản ghi FMCG tại sáu quốc gia để hỗ trợ ưu tiên lập kế hoạch; 20% SKU hàng đầu tạo ra 50,04% doanh thu thuần, với SQL Server và Power BI được đối soát làm planning guardrail.",
-            "fnb-supply-chain": "Xây dựng dashboard Power BI cho giám sát chuỗi cung ứng; xác thực 11 KPI DAX gồm đơn hàng, gross margin và OTIF sau EDA, kiểm tra chất lượng dữ liệu và làm sạch Power Query.",
-            "xom-bank": "Phân tích hơn 157 nghìn giao dịch ngân hàng trong SQL Server/Power BI, vượt 19/19 kiểm tra chất lượng dữ liệu và phân khúc hơn 2 nghìn hồ sơ khách hàng để hỗ trợ quyết định.",
-            dagpt: "Triển khai trợ lý dữ liệu self-service, chuyển CSV tải lên và câu hỏi ngôn ngữ tự nhiên thành phân tích và biểu đồ tương tác để khám phá nhanh hơn.",
+            "fmcg-multi-country-sales": "Trong 1,05 triệu bản ghi tại sáu quốc gia, 20% SKU hàng đầu tạo ra 50,04% doanh thu thuần: doanh thu tập trung ở một phần nhỏ danh mục. Đề xuất ưu tiên nguồn hàng cho SKU giá trị cao, theo dõi lượng bán khuyến mại cùng biên lợi nhuận gộp.",
+            "fnb-supply-chain": "Trong 2.200 đơn hàng, 92,55% được giao đúng hạn và đủ hàng; 164 đơn trễ cho thấy khoảng trống dịch vụ giao hàng. Đề xuất rà nhà cung cấp S005/S008 và kho W001 trước, theo dõi độ tin cậy giao hàng, thiếu hàng và hao hụt để chọn biện pháp khắc phục.",
+            "xom-bank": "Phân tích hơn 157 nghìn giao dịch và 2.000 hồ sơ; 1.697 khách chưa có giao dịch trong dữ liệu, làm hạn chế khả năng nhắm chọn theo hành vi. Đề xuất thử onboarding theo phân khúc, đo tỷ lệ giao dịch đầu tiên so với nhóm đối chứng.",
+            "insurance-ops": "Trong 13.846 khiếu nại, thời gian xử lý trung bình 12,85 ngày so với trung vị 7 ngày cho thấy có các ca kéo dài. Đề xuất rà nhóm ưu tiên và nguồn CRO, cải thiện ghi nhận trạng thái vì chỉ 31,42% hồ sơ có lịch sử.",
           },
         },
         contact: {
@@ -469,7 +474,7 @@ const roleProfiles = {
           titlePrimary: "Building reliable data foundations",
           titleSecondary: "for analytics and ML.",
           roleLabel: "Le Hoang Gia Vi — Fresher Data Engineer",
-          description: "Final-year Data Science student with hands-on work in <strong>SQL, data warehousing, data quality, banking analytics and AWS data pipelines</strong>. I build data flows that are easier to validate, store and use for reporting or machine learning.",
+          description: "Data Science graduate with hands-on experience designing SQL data models and developing automated AWS data pipelines for BI and machine learning workflows. Proficient in source ingestion, pipeline orchestration, and automated data quality checks. Dedicated to delivering clean, traceable, and reliable datasets that support downstream analytics.",
           primaryAction: "Explore Data Engineering Work",
           status: "Open to Fresher Data Engineer opportunities",
           technologies: [
@@ -484,7 +489,7 @@ const roleProfiles = {
         about: {
           heading: ["From raw data to", "trusted data pipelines."],
           paragraphs: [
-            "I am a final-year <strong>Data Science</strong> student with project and internship experience across SQL analytics, data warehousing, AWS data services, data-quality checks and finance/banking datasets.",
+            "I am a <strong>Data Science</strong> graduate with project and internship experience across SQL analytics, data warehousing, AWS data services, data-quality checks and finance/banking datasets.",
             "I focus on practical data engineering work: understand the source, validate the numbers, build a clear pipeline and make the output useful for analysts, reports or ML workflows.",
           ],
           points: [
@@ -534,7 +539,7 @@ const roleProfiles = {
           titlePrimary: "Xây dựng nền tảng dữ liệu đáng tin",
           titleSecondary: "cho phân tích và ML.",
           roleLabel: "Le Hoang Gia Vi — Data Engineer Fresher",
-          description: "Sinh viên năm cuối ngành Khoa học Dữ liệu với kinh nghiệm thực hành về <strong>SQL, kho dữ liệu, chất lượng dữ liệu, phân tích ngân hàng và pipeline dữ liệu AWS</strong>. Tôi xây dựng luồng dữ liệu dễ kiểm tra, lưu trữ và sử dụng cho báo cáo hoặc học máy.",
+          description: "Tốt nghiệp ngành Khoa học Dữ liệu với kinh nghiệm thực hành thiết kế mô hình dữ liệu SQL và phát triển pipeline AWS tự động cho BI và học máy. Có năng lực thu thập dữ liệu nguồn, điều phối pipeline và kiểm tra chất lượng dữ liệu tự động. Chú trọng cung cấp dữ liệu sạch, có thể truy vết và đáng tin cậy để phục vụ phân tích phía sau.",
           primaryAction: "Khám phá dự án Kỹ thuật Dữ liệu",
           status: "Sẵn sàng cho các vị trí Data Engineer Fresher",
           technologies: [
@@ -549,7 +554,7 @@ const roleProfiles = {
         about: {
           heading: ["Từ dữ liệu thô đến", "pipeline đáng tin."],
           paragraphs: [
-            "Tôi là sinh viên năm cuối ngành <strong>Khoa học Dữ liệu</strong>, có kinh nghiệm qua dự án và thực tập về phân tích SQL, kho dữ liệu, dịch vụ dữ liệu AWS, kiểm tra chất lượng dữ liệu và bộ dữ liệu tài chính/ngân hàng.",
+            "Tôi đã tốt nghiệp ngành <strong>Khoa học Dữ liệu</strong>, có kinh nghiệm qua dự án và thực tập về phân tích SQL, kho dữ liệu, dịch vụ dữ liệu AWS, kiểm tra chất lượng dữ liệu và bộ dữ liệu tài chính/ngân hàng.",
             "Tôi tập trung vào kỹ thuật dữ liệu thực tiễn: hiểu nguồn dữ liệu, kiểm tra số liệu, xây dựng pipeline rõ ràng và tạo đầu ra hữu ích cho analyst, báo cáo hoặc quy trình ML.",
           ],
           points: [

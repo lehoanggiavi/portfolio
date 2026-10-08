@@ -4,6 +4,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const roleProfiles = require("../role-profiles.js");
+const localCvChecks = { skip: !fs.existsSync(path.join(__dirname, "..", "templates", "cv_follow_jd")) };
 
 const expectedRoles = ["ai", "ds", "da", "de"];
 const expectedProjects = [
@@ -43,9 +44,12 @@ test("every role has complete bilingual content and a distinct CV asset", () => 
   assert.equal(cvLinks.size, expectedRoles.length);
 });
 
-test("each role ranks every repository exactly once", () => {
-  Object.values(roleProfiles).forEach((profile) => {
-    assert.deepEqual(Object.keys(profile.projectPriorities).sort(), expectedProjects.sort());
+test("each role ranks its selected projects exactly once", () => {
+  Object.entries(roleProfiles).forEach(([role, profile]) => {
+    const projects = role === "da"
+      ? expectedProjects.filter((id) => id !== "dagpt").concat("insurance-ops")
+      : expectedProjects;
+    assert.deepEqual(Object.keys(profile.projectPriorities).sort(), [...projects].sort());
     assert.deepEqual(
       Object.values(profile.projectPriorities).sort((a, b) => a - b),
       [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
@@ -60,6 +64,7 @@ test("project priorities reflect each role's strongest evidence", () => {
   assert.equal(roleProfiles.da.projectPriorities["fmcg-multi-country-sales"], 1);
   assert.equal(roleProfiles.da.projectPriorities["fnb-supply-chain"], 2);
   assert.equal(roleProfiles.da.projectPriorities["xom-bank"], 3);
+  assert.equal(roleProfiles.da.projectPriorities["insurance-ops"], 4);
   assert.equal(roleProfiles.de.projectPriorities["xom-bank"], 1);
   assert.equal(roleProfiles.de.projectPriorities["fmcg-multi-country-sales"], 2);
   assert.equal(roleProfiles.de.projectPriorities["fnb-supply-chain"], 3);
@@ -90,7 +95,7 @@ test("project descriptions cache defaults before applying saved language", () =>
   assert.ok(savedLanguageApplied > fallbackCache);
 });
 
-test("the AI CV features VNStock first and excludes Xóm Bank", () => {
+test("the AI CV features VNStock first and excludes Xóm Bank", localCvChecks, () => {
   const tex = fs.readFileSync(
     path.join(__dirname, "..", "templates", "cv_follow_jd", "LeHoangGiaVi_CV_AI_Engineer.tex"),
     "utf8",
@@ -104,7 +109,7 @@ test("the AI CV features VNStock first and excludes Xóm Bank", () => {
   assert.doesNotMatch(tex, /X[ÓÃ]M BANK/);
 });
 
-test("the DA CV leads with FMCG business insight and excludes fraud detection", () => {
+test("the DA CV leads with FMCG business insight and excludes fraud detection", localCvChecks, () => {
   const tex = fs.readFileSync(
     path.join(__dirname, "..", "templates", "cv_follow_jd", "LeHoangGiaVi_CV_Data_Analyst.tex"),
     "utf8",
@@ -114,11 +119,36 @@ test("the DA CV leads with FMCG business insight and excludes fraud detection", 
 
   assert.ok(fmcg >= 0 && fmcg < fnb, "FMCG must be the first DA project");
   assert.match(tex, /top 20\\% of SKUs generated 50\.04\\% of net sales/);
-  assert.match(tex, /planning guardrail/);
+  assert.match(tex, /Recommended prioritizing availability of high-value SKUs/);
   assert.doesNotMatch(tex, /CREDIT CARD FRAUD DETECTION/);
+  assert.doesNotMatch(tex, /DAGPT/);
+  assert.match(tex, /INSURANCEOPS/);
+  assert.match(tex, /13,846 insurance complaints/);
+  assert.match(tex, /31\.42\\%/);
+  assert.match(tex, /1,697 customers had no observed transactions in the dataset/);
+  assert.match(tex, /holdout group/);
+  assert.doesNotMatch(tex, /InsuranceOps_Project_Report|Report PDF/);
+  assert.match(tex, /\\textbf\{\\href\{#4\}\{#1\}\}/);
+  assert.doesNotMatch(tex, /GitHub:|https:\/\/github\.com\/lehoanggiavi\/(?:Banking|F-B-Supply-Chain|FMCGMultiCountrySalesDataset)/);
 });
 
-test("the Data Engineer CV leads with banking data and AWS pipeline evidence", () => {
+test("DA project titles link only to available deployed sites", () => {
+  const links = roleProfiles.da.projectLinks;
+  assert.deepEqual(Object.keys(links), ["fmcg-multi-country-sales", "fnb-supply-chain", "xom-bank"]);
+  assert.equal(links["xom-bank"][0], "https://lehoanggiavi.github.io/Banking/");
+  assert.equal(links["fnb-supply-chain"][0], "https://lehoanggiavi.github.io/F-B-Supply-Chain/");
+  assert.equal(links["insurance-ops"], undefined);
+  const html = fs.readFileSync(path.join(__dirname, "..", "index.html"), "utf8");
+  const insuranceCard = html.match(/<article aria-label="InsuranceOps"[\s\S]*?<\/article>/)[0];
+  assert.doesNotMatch(insuranceCard, /<a\b/);
+  assert.ok(fs.existsSync(path.join(__dirname, "..", "images/projects/insurance-ops-cover.png")));
+  ["en", "vi"].forEach((language) => {
+    assert.ok(roleProfiles.da.copy[language].projects.descriptions["insurance-ops"]);
+    assert.equal(roleProfiles.da.copy[language].projects.descriptions.dagpt, undefined);
+  });
+});
+
+test("the Data Engineer CV leads with banking data and AWS pipeline evidence", localCvChecks, () => {
   const tex = fs.readFileSync(
     path.join(__dirname, "..", "templates", "cv_follow_jd", "LeHoangGiaVi_CV_Data_Engineer.tex"),
     "utf8",
@@ -165,7 +195,7 @@ test("the published page loads role data before its behavior and exposes all rol
   assert.doesNotMatch(script, /\$\$\('\[data-role\]'\)/);
 });
 
-test("each CV deep-links its Portfolio hyperlink to the matching role", () => {
+test("each CV deep-links its Portfolio hyperlink to the matching role", localCvChecks, () => {
   const templates = {
     ai: "LeHoangGiaVi_CV_AI_Engineer.tex",
     ds: "LeHoangGiaVi_CV_Data_Scientist.tex",
