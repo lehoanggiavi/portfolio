@@ -97,7 +97,7 @@ const languagePairs = [
   ["AWS · Cloud Engineer Intern", "AWS · Thực tập sinh Kỹ sư Đám mây"],
   ["Built a fraud-detection flow using API Gateway, Lambda, Kinesis, SageMaker, SNS, Firehose and S3 for prediction history.", "Xây dựng luồng phát hiện gian lận dùng API Gateway, Lambda, Kinesis, SageMaker, SNS, Firehose và S3 để lưu lịch sử dự đoán."],
   ["Graduated", "Đã tốt nghiệp"],
-  ["HUTECH · Engineering of Data Science", "HUTECH · Kỹ thuật Khoa học Dữ liệu"],
+  ["HUTECH (9/2022 - 10/2026) · Engineering of Data Science", "HUTECH (9/2022 - 10/2026) · Kỹ thuật Khoa học Dữ liệu"],
   ["Data Science graduate · GPA 3.38/4.00.", "Đã tốt nghiệp Khoa học Dữ liệu · GPA 3.38/4.00."],
   ["HUTECH IT Got Talent · Finalist", "HUTECH IT Got Talent · Chung kết"],
   ["Built an AI fall-detection solution using camera and CSI signals with real-time email alerts.", "Xây dựng giải pháp AI phát hiện té ngã từ camera và tín hiệu CSI, có cảnh báo email thời gian thực."],
