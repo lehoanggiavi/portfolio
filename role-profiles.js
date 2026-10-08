@@ -13,6 +13,8 @@ const roleProfiles = {
       "parking-slot": 8,
       "heart-disease": 9,
       "vnstock-ai": 1,
+      "insurance-ops": 12,
+      "giaongon": 13,
     },
     copy: {
       en: {
@@ -161,6 +163,8 @@ const roleProfiles = {
       "parking-slot": 10,
       "heart-disease": 4,
       "vnstock-ai": 7,
+      "insurance-ops": 12,
+      "giaongon": 13,
     },
     copy: {
       en: {
@@ -301,19 +305,22 @@ const roleProfiles = {
       "fmcg-multi-country-sales": ["https://lehoanggiavi.github.io/FMCGMultiCountrySalesDataset/", "FMCG…/"],
       "fnb-supply-chain": ["https://lehoanggiavi.github.io/F-B-Supply-Chain/", "F-B-Supply-Chain/"],
       "xom-bank": ["https://lehoanggiavi.github.io/Banking/", "Banking/"],
+      "insurance-ops": ["https://lehoanggiavi.github.io/Insurance/", "Insurance/"],
     },
     projectPriorities: {
       "fmcg-multi-country-sales": 1,
       "fnb-supply-chain": 2,
       "xom-bank": 3,
-      "smart-class": 8,
-      clen: 10,
+      "smart-class": 9,
+      clen: 11,
       "insurance-ops": 4,
-      "cacao-shield": 11,
-      "fraud-detection": 5,
-      "parking-slot": 9,
-      "heart-disease": 6,
-      "vnstock-ai": 7,
+      "cacao-shield": 12,
+      "fraud-detection": 6,
+      "parking-slot": 10,
+      "heart-disease": 7,
+      "vnstock-ai": 8,
+      "giaongon": 5,
+      dagpt: 13,
     },
     copy: {
       en: {
@@ -462,6 +469,8 @@ const roleProfiles = {
       "parking-slot": 8,
       "heart-disease": 7,
       "vnstock-ai": 6,
+      "insurance-ops": 12,
+      "giaongon": 13,
     },
     copy: {
       en: {

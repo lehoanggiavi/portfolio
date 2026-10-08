@@ -19,6 +19,8 @@ const expectedProjects = [
   "parking-slot",
   "heart-disease",
   "vnstock-ai",
+  "insurance-ops",
+  "giaongon",
 ];
 
 test("defines exactly the four supported application roles", () => {
@@ -44,15 +46,12 @@ test("every role has complete bilingual content and a distinct CV asset", () => 
   assert.equal(cvLinks.size, expectedRoles.length);
 });
 
-test("each role ranks its selected projects exactly once", () => {
+test("each role ranks all 13 projects exactly once", () => {
   Object.entries(roleProfiles).forEach(([role, profile]) => {
-    const projects = role === "da"
-      ? expectedProjects.filter((id) => id !== "dagpt").concat("insurance-ops")
-      : expectedProjects;
-    assert.deepEqual(Object.keys(profile.projectPriorities).sort(), [...projects].sort());
+    assert.deepEqual(Object.keys(profile.projectPriorities).sort(), [...expectedProjects].sort());
     assert.deepEqual(
       Object.values(profile.projectPriorities).sort((a, b) => a - b),
-      [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+      Array.from({ length: 13 }, (_, index) => index + 1),
     );
   });
 });
@@ -134,13 +133,14 @@ test("the DA CV leads with FMCG business insight and excludes fraud detection", 
 
 test("DA project titles link only to available deployed sites", () => {
   const links = roleProfiles.da.projectLinks;
-  assert.deepEqual(Object.keys(links), ["fmcg-multi-country-sales", "fnb-supply-chain", "xom-bank"]);
+  assert.deepEqual(Object.keys(links), ["fmcg-multi-country-sales", "fnb-supply-chain", "xom-bank", "insurance-ops"]);
   assert.equal(links["xom-bank"][0], "https://lehoanggiavi.github.io/Banking/");
   assert.equal(links["fnb-supply-chain"][0], "https://lehoanggiavi.github.io/F-B-Supply-Chain/");
-  assert.equal(links["insurance-ops"], undefined);
+  assert.equal(links["insurance-ops"][0], "https://lehoanggiavi.github.io/Insurance/");
   const html = fs.readFileSync(path.join(__dirname, "..", "index.html"), "utf8");
   const insuranceCard = html.match(/<article aria-label="InsuranceOps"[\s\S]*?<\/article>/)[0];
-  assert.doesNotMatch(insuranceCard, /<a\b/);
+  assert.match(insuranceCard, /href="https:\/\/lehoanggiavi\.github\.io\/Insurance\/"/);
+  assert.match(insuranceCard, /href="https:\/\/github\.com\/lehoanggiavi\/Insurance"/);
   assert.ok(fs.existsSync(path.join(__dirname, "..", "images/projects/insurance-ops-cover.png")));
   ["en", "vi"].forEach((language) => {
     assert.ok(roleProfiles.da.copy[language].projects.descriptions["insurance-ops"]);
@@ -177,6 +177,8 @@ test("the published page loads role data before its behavior and exposes all rol
   expectedProjects.forEach((project) => {
     assert.match(html, new RegExp(`data-project-id="${project}"`));
   });
+  assert.equal((html.match(/data-project-id=/g) || []).length, 13);
+  assert.ok(fs.existsSync(path.join(__dirname, "..", "images/projects/giaongon-cover.png")));
   assert.match(
     html,
     /<article aria-label="F&amp;B Supply Chain"[\s\S]*?src="images\/projects\/fnb-supply-chain-cover\.png"/,

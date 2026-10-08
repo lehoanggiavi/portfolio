@@ -122,6 +122,8 @@ const languagePairs = [
   ["Classification workflow for analyzing patient indicators and predicting disease risk.", "Quy trình phân loại để phân tích chỉ số bệnh nhân và dự đoán nguy cơ bệnh."],
   ["FullRAG and agent-based system for VN30 stock analysis using financial data, news and reports.", "Hệ thống FullRAG và agent cho phân tích cổ phiếu VN30 bằng dữ liệu tài chính, tin tức và báo cáo."],
   ["View repository", "Xem mã nguồn"],
+  ["Across 13,846 complaints, resolution averaged 12.85 days versus a 7-day median, highlighting long-running cases. Recommended reviewing priority cases and CRO intake, and improving status logging: only 31.42% of complaints had recorded status history.", "Trong 13.846 khiếu nại, thời gian xử lý trung bình 12,85 ngày so với trung vị 7 ngày cho thấy có các ca kéo dài. Đề xuất rà nhóm ưu tiên và nguồn CRO, cải thiện ghi nhận trạng thái vì chỉ 31,42% hồ sơ có lịch sử."],
+  ["Analyzed 6,073 food-delivery orders; late delivery rose from 5.97% in March to 25.08% in August as volume grew 24.35%. Recommended reviewing evening operations and testing changes against delivery reliability and cancellations.", "Phân tích 6.073 đơn giao đồ ăn; tỷ lệ trễ tăng từ 5,97% tháng 3 lên 25,08% tháng 8 khi lượng đơn tăng 24,35%. Đề xuất rà vận hành ca Tối, thử thay đổi và đo độ tin cậy giao hàng cùng tỷ lệ hủy."],
   ["Face Recognition", "Nhận diện khuôn mặt"],
   ["Real-time", "Thời gian thực"],
   ["RESEARCH · 5 ACCEPTED PAPERS", "NGHIÊN CỨU · 5 BÀI BÁO ĐƯỢC CHẤP NHẬN"],
@@ -906,8 +908,7 @@ function applyRepoFilter(filter) {
   repoCurrentIndex = 0;
 
   repoCards.forEach((card) => {
-    const inRole = card.dataset.projectId in profiles[currentRole].projectPriorities;
-    const visible = inRole && (filter === "all" || card.dataset.category === filter);
+    const visible = filter === "all" || card.dataset.category === filter;
     card.hidden = !visible;
     card.classList.remove("is-active");
   });
