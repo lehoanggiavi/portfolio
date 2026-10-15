@@ -26,6 +26,7 @@ let roleContentReady = false;
 let currentLanguage = "en";
 const languageToggle = $("#language-toggle");
 const languagePairs = [
+  ["Analyzed 9,705 sales-source rows with Python and Power BI; July's recorded value rose 22.72%, with two Makeup SKUs contributing 29.26% of the increase. Built a three-page dashboard and business report, documenting unresolved order/customer identifiers and metric limits.", "Phân tích 9.705 dòng nguồn bằng Python và Power BI; giá trị ghi nhận tháng 7 tăng 22,72%, hai mã Makeup đóng góp 29,26% phần tăng. Xây dashboard ba trang và báo cáo kinh doanh, ghi rõ giới hạn mã đơn/khách và định nghĩa chỉ số."],
   ["AI ENGINEER", "KỸ SƯ AI"],
   ["AI Engineer", "Kỹ sư AI"],
   ["About", "Giới thiệu"],

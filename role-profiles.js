@@ -15,6 +15,7 @@ const roleProfiles = {
       "vnstock-ai": 1,
       "insurance-ops": 12,
       "giaongon": 13,
+      "nile-sales": 14,
     },
     copy: {
       en: {
@@ -165,6 +166,7 @@ const roleProfiles = {
       "vnstock-ai": 7,
       "insurance-ops": 12,
       "giaongon": 13,
+      "nile-sales": 14,
     },
     copy: {
       en: {
@@ -311,16 +313,17 @@ const roleProfiles = {
       "fmcg-multi-country-sales": 1,
       "fnb-supply-chain": 2,
       "xom-bank": 3,
-      "smart-class": 9,
-      clen: 11,
+      "smart-class": 10,
+      clen: 12,
       "insurance-ops": 4,
-      "cacao-shield": 12,
-      "fraud-detection": 6,
-      "parking-slot": 10,
-      "heart-disease": 7,
-      "vnstock-ai": 8,
-      "giaongon": 5,
-      dagpt: 13,
+      "cacao-shield": 13,
+      "fraud-detection": 7,
+      "parking-slot": 11,
+      "heart-disease": 8,
+      "vnstock-ai": 9,
+      "giaongon": 6,
+      dagpt: 14,
+      "nile-sales": 5,
     },
     copy: {
       en: {
@@ -377,6 +380,7 @@ const roleProfiles = {
             "fnb-supply-chain": "Of 2,200 orders, 92.55% arrived on time and in full; 164 late orders highlighted delivery-service gaps. Recommended reviewing suppliers S005/S008 and warehouse W001 first, tracking delivery reliability, stockouts and waste to guide corrective action.",
             "xom-bank": "Analyzed 157K+ transactions and 2,000 customer profiles; 1,697 customers had no observed transactions in the dataset, limiting behavior-based targeting. Proposed onboarding tests tailored to customer segments, measured by first-transaction rate against a holdout group.",
             "insurance-ops": "Across 13,846 complaints, resolution averaged 12.85 days versus a 7-day median, highlighting long-running cases. Recommended reviewing priority cases and CRO intake, and improving status logging: only 31.42% of complaints had recorded status history.",
+            "nile-sales": "Analyzed 9,705 sales-source rows with Python and Power BI; July's recorded value rose 22.72%, with two Makeup SKUs contributing 29.26% of the increase. Built a three-page dashboard and business report, documenting unresolved order/customer identifiers and metric limits.",
           },
         },
         contact: {
@@ -442,6 +446,7 @@ const roleProfiles = {
             "fnb-supply-chain": "Trong 2.200 đơn hàng, 92,55% được giao đúng hạn và đủ hàng; 164 đơn trễ cho thấy khoảng trống dịch vụ giao hàng. Đề xuất rà nhà cung cấp S005/S008 và kho W001 trước, theo dõi độ tin cậy giao hàng, thiếu hàng và hao hụt để chọn biện pháp khắc phục.",
             "xom-bank": "Phân tích hơn 157 nghìn giao dịch và 2.000 hồ sơ; 1.697 khách chưa có giao dịch trong dữ liệu, làm hạn chế khả năng nhắm chọn theo hành vi. Đề xuất thử onboarding theo phân khúc, đo tỷ lệ giao dịch đầu tiên so với nhóm đối chứng.",
             "insurance-ops": "Trong 13.846 khiếu nại, thời gian xử lý trung bình 12,85 ngày so với trung vị 7 ngày cho thấy có các ca kéo dài. Đề xuất rà nhóm ưu tiên và nguồn CRO, cải thiện ghi nhận trạng thái vì chỉ 31,42% hồ sơ có lịch sử.",
+            "nile-sales": "Phân tích 9.705 dòng nguồn bằng Python và Power BI; giá trị ghi nhận tháng 7 tăng 22,72%, hai mã Makeup đóng góp 29,26% phần tăng. Xây dashboard ba trang và báo cáo kinh doanh, ghi rõ giới hạn mã đơn/khách và định nghĩa chỉ số.",
           },
         },
         contact: {
@@ -471,6 +476,7 @@ const roleProfiles = {
       "vnstock-ai": 6,
       "insurance-ops": 12,
       "giaongon": 13,
+      "nile-sales": 14,
     },
     copy: {
       en: {

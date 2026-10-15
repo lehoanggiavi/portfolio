@@ -21,6 +21,7 @@ const expectedProjects = [
   "vnstock-ai",
   "insurance-ops",
   "giaongon",
+  "nile-sales",
 ];
 
 test("defines exactly the four supported application roles", () => {
@@ -46,12 +47,12 @@ test("every role has complete bilingual content and a distinct CV asset", () => 
   assert.equal(cvLinks.size, expectedRoles.length);
 });
 
-test("each role ranks all 13 projects exactly once", () => {
+test("each role ranks all 14 projects exactly once", () => {
   Object.entries(roleProfiles).forEach(([role, profile]) => {
     assert.deepEqual(Object.keys(profile.projectPriorities).sort(), [...expectedProjects].sort());
     assert.deepEqual(
       Object.values(profile.projectPriorities).sort((a, b) => a - b),
-      Array.from({ length: 13 }, (_, index) => index + 1),
+      Array.from({ length: 14 }, (_, index) => index + 1),
     );
   });
 });
@@ -177,7 +178,7 @@ test("the published page loads role data before its behavior and exposes all rol
   expectedProjects.forEach((project) => {
     assert.match(html, new RegExp(`data-project-id="${project}"`));
   });
-  assert.equal((html.match(/data-project-id=/g) || []).length, 13);
+  assert.equal((html.match(/data-project-id=/g) || []).length, 14);
   assert.ok(fs.existsSync(path.join(__dirname, "..", "images/projects/giaongon-cover.png")));
   assert.match(
     html,
@@ -223,4 +224,15 @@ test("every role points to a published CV PDF", () => {
     assert.ok(fs.existsSync(assetPath), `Missing CV asset: ${profile.cvHref}`);
     assert.ok(fs.statSync(assetPath).size > 10_000, `CV asset is unexpectedly small: ${profile.cvHref}`);
   });
+});
+
+test("Nile Sales adds a bilingual DA case study and links to its actual repository", () => {
+  const html = fs.readFileSync(path.join(__dirname, "..", "index.html"), "utf8");
+  const card = html.match(/<article aria-label="Nile Sales"[\s\S]*?<\/article>/)[0];
+  assert.match(card, /href="https:\/\/github\.com\/lehoanggiavi\/Nile_Sale"/);
+  assert.match(card, /images\/projects\/nile-sales-cover\.png/);
+  assert.equal(roleProfiles.da.projectPriorities["nile-sales"], 5);
+  assert.match(roleProfiles.da.copy.en.projects.descriptions["nile-sales"], /sales-source rows/);
+  assert.match(roleProfiles.da.copy.en.projects.descriptions["nile-sales"], /29\.26%/);
+  assert.match(roleProfiles.da.copy.vi.projects.descriptions["nile-sales"], /giới hạn mã đơn\/khách/);
 });
